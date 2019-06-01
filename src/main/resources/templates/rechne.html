@@ -11,20 +11,33 @@
 
     <table>
         <tr>
-            <td>Betrag 1</td>
+            <td> </td>
+            <td>Summand 1</td>
             <td>
                 <input id="summand1" name="summand1" type="text" maxlength="10" th:value="${summand1}">
             </td>
         </tr>
 
         <tr>
-            <td>Betrag 2</td>
+            <td>+</td>
+            <td>Summand 2</td>
             <td>
                 <input id="summand2" name="summand2" type="text" maxlength="10" th:value="${summand2}">
             </td>
         </tr>
         <tr>
-            <td>Ergebnis</td>
+            <td>=</td>
+            <td>Interim result</td>
+            <td><input id="interimResult" name="interimResult" type="text" maxlength="10" readonly th:value="${interimResult}"></td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>VAT (19%)</td>
+            <td><input id="vat" name="vat" type="text" maxlength="10" readonly th:value="${vat}"></td>
+        </tr>
+        <tr>
+            <td>=</td>
+            <td>Result</td>
             <td><input id="result" name="result" type="text" maxlength="10" readonly th:value="${result}"></td>
         </tr>
 
