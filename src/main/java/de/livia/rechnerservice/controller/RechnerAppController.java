@@ -28,9 +28,8 @@ public class RechnerAppController {
      */
     @RequestMapping(value = "/rechne", method = RequestMethod.GET)
     public String rechne(Model model) {
-        model.addAttribute("summand1", 0.00);
-        model.addAttribute("summand2", 0.00);
-        model.addAttribute("interimResult", 0.00);
+//        model.addAttribute("summand2", 0.00);
+      //  model.addAttribute("interimResult", 0.00);
         model.addAttribute("vat", 0.00);
         model.addAttribute("result", 0.00);
         return "rechne";
