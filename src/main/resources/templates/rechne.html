@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Rechner App</title>
+</head>
+<body>
+
+<form id="rechnerForm" th:action="@{'/rechneErgebnis'}" th:method="POST">
+
+
+    <table>
+        <tr>
+            <td>Betrag 1</td>
+            <td>
+                <input id="summand1" name="summand1" type="text" maxlength="10" th:value="${summand1}">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Betrag 2</td>
+            <td>
+                <input id="summand2" name="summand2" type="text" maxlength="10" th:value="${summand2}">
+            </td>
+        </tr>
+        <tr>
+            <td>Ergebnis</td>
+            <td><input id="result" name="result" type="text" maxlength="10" readonly th:value="${result}"></td>
+        </tr>
+
+    </table>
+
+    <input type="submit" value="Ergebnis berechnen">
+</form>
+
+</body>
+</html>
