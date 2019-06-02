@@ -28,8 +28,7 @@ public class RechnerAppController {
      */
     @RequestMapping(value = "/rechne", method = RequestMethod.GET)
     public String rechne(Model model) {
-//        model.addAttribute("summand2", 0.00);
-      //  model.addAttribute("interimResult", 0.00);
+        model.addAttribute("interimResult", 0.00);
         model.addAttribute("vat", 0.00);
         model.addAttribute("result", 0.00);
         return "rechne";
@@ -37,19 +36,8 @@ public class RechnerAppController {
 
     /**
      * Invokes the remote REST service Addierer, calculates the result and retrieves it to result page
-     * @return
+     * @return result page
      */
-    /*@RequestMapping(value = "/rechneErgebnis", method = RequestMethod.POST)
-    public String rechneErgebnis(@RequestParam(name = "summand1") double summand1,
-                                 @RequestParam(name = "summand2") double summand2, Model model) {
-        logger.debug("Summand 1: " + summand1);
-        logger.debug("Summand 2: " + summand2);
-        model.addAttribute("summand1", summand1);
-        model.addAttribute("summand2", summand2);
-        model.addAttribute("result", addiererService.calculateTotal(summand1, summand2));
-        return "rechne";
-    }*/
-
     @RequestMapping(value = "/rechneErgebnis", method = RequestMethod.POST)
     public String rechneErgebnis(@RequestParam(name = "summand1") double summand1,
                                  @RequestParam(name = "summand2") double summand2, Model model) {
@@ -59,9 +47,7 @@ public class RechnerAppController {
         model.addAttribute("summand2", summand2);
         model.addAttribute("interimResult", addiererService.calculateTotal(summand1, summand2));
         model.addAttribute("vat",mwstService.calculateVat(addiererService.calculateTotal(summand1, summand2)));
-        model.addAttribute("result", (addiererService.calculateTotal(summand1, summand2)-mwstService.calculateVat( addiererService.calculateTotal(summand1, summand2))));
-
-
+        model.addAttribute("result", (addiererService.calculateTotal(summand1, summand2)+mwstService.calculateVat( addiererService.calculateTotal(summand1, summand2))));
         return "rechne";
     }
 }

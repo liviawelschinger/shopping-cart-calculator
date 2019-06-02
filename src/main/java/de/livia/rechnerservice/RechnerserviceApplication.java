@@ -8,6 +8,8 @@ public class RechnerserviceApplication {
 
 	public static void main(String[] args) {
 
+		// URL: http://localhost:9191/rechnerapp/rechne
+
 
 		SpringApplication.run(RechnerserviceApplication.class, args);
 	}
